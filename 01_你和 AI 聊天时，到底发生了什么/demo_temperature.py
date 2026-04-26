@@ -6,7 +6,7 @@ Temperature 越低越确定，越高越有创造力。
 
 运行方式：
   export GOOGLE_API_KEY="your-api-key-here"
-  python demo_temperature.py 或 python3 demo_temperature.py
+  python demo_temperature.py
 """
 
 import os
@@ -42,9 +42,6 @@ def main():
         )
         print(f"   第 {i + 1} 次: {response.text.strip()}")
 
-    # 避免 429 速率限制（免费层 5 RPM）
-    time.sleep(1)
-
     print(f"\n--- 使用 Temperature = 1.0（更随机，结果可能不同）---")
 
     for i in range(3):
@@ -54,9 +51,6 @@ def main():
             config=types.GenerateContentConfig(temperature=1.0),
         )
         print(f"   第 {i + 1} 次: {response.text.strip()}")
-
-    print(f"\n💡 注意对比：低 Temperature 的结果是否更一致？高 Temperature 是否更多样？")
-
 
 if __name__ == "__main__":
     main()
