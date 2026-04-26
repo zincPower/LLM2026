@@ -16,7 +16,6 @@ import time
 from google import genai
 from google.genai import types
 
-
 def main():
     api_key = os.environ.get("GOOGLE_API_KEY")
     if not api_key:
