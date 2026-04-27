@@ -12,6 +12,8 @@ import sys
 from google import genai
 from google.genai import types
 
+MAX_OUTPUT_TOKENS = 50
+
 def main():
     api_key = os.environ.get("GOOGLE_API_KEY")
     if not api_key:
@@ -27,15 +29,15 @@ def main():
     prompt = "详细介绍 Python 的十大特性"
 
     print(f"\n📌 Prompt: \"{prompt}\"")
-    print(f"   max_output_tokens = 50\n")
+    print(f"   max_output_tokens = {MAX_OUTPUT_TOKENS}\n")
 
-    # 关掉 thinking——否则 50 个 token 会被思考阶段吃光，
+    # 关掉 thinking——否则这 max_output_tokens 个 token 会被思考阶段吃光，
     # 最终可见输出只剩几个字，max_tokens 的截断效果看不到。
     response = client.models.generate_content(
         model="gemini-2.5-flash",
         contents=prompt,
         config=types.GenerateContentConfig(
-            max_output_tokens=50,
+            max_output_tokens=MAX_OUTPUT_TOKENS,
             thinking_config=types.ThinkingConfig(thinking_budget=0),
         ),
     )

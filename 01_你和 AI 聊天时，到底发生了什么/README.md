@@ -1,5 +1,15 @@
 # Python Demo 运行指南
 
+## Demo 一览
+
+| 文件 | 演示内容 | 对应文章章节 |
+|---|---|---|
+| `demo_token_count.py` | 查看 Prompt 和回复消耗的 Token 数 | 二、Token |
+| `demo_multi_turn.py` | 多轮对话历史是手动拼接、每次重发 | 三、AI 怎么记住聊天 |
+| `demo_temperature.py` | 同一问题在不同 Temperature 下的回复差异 | 四、Temperature |
+| `demo_max_tokens.py` | max_output_tokens 截断模型输出的效果 | 四、Max Tokens |
+| `demo_streaming.py` | 流式输出，文字逐 chunk 到达 | 五、Streaming |
+
 ## 环境要求
 
 - 建议 Python >= 3.10 （ 3.9 也能跑，但会有警告提示）

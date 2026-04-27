@@ -24,7 +24,7 @@ def main():
     print("🔍 查看 Token 用量")
     print("=" * 60)
 
-    prompt = "用一句话解释什么是 Token"
+    prompt = "用一句话解释大模型中的 Token"
     print(f'\n📌 Prompt: "{prompt}"')
 
     response = client.models.generate_content(

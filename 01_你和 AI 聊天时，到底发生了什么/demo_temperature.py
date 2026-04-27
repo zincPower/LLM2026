@@ -11,7 +11,6 @@ Temperature 越低越确定，越高越有创造力。
 
 import os
 import sys
-import time
 
 from google import genai
 from google.genai import types
