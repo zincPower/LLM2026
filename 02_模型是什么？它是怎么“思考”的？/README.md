@@ -1,14 +1,11 @@
-# 《拆解与 AI 的一次对话》 Demo 运行指南
+# 《模型是什么？它是怎么 “思考” 的？》 Demo 运行指南
 
 ## Demo 一览
 
 | 文件 | 演示内容 | 对应文章章节 |
 |---|---|---|
-| `demo_token_count.py` | 查看 Prompt 和回复消耗的 Token 数 | 二、大模型的文字 |
-| `demo_multi_turn.py` | 多轮对话历史是手动拼接、每次重发 | 三、AI 的 “短期记忆” |
-| `demo_temperature.py` | 同一问题在不同 Temperature 下的回复差异 | 四、控制 AI 的行为 |
-| `demo_max_tokens.py` | max_output_tokens 截断模型输出的效果 | 四、控制 AI 的行为 |
-| `demo_streaming.py` | 流式输出，文字逐 chunk 到达 | 五、为什么 AI 是一个字一个字蹦出来的 |
+| `demo_next_token_prediction.py` | 同一前缀重复采样，看到 “下一个 Token” 其实是一个概率分布 | 二、大模型是怎么 “想” 出回答的？ |
+| `demo_autoregressive_loop.py` | 把 “预测下一个 Token → 拼接 → 再预测” 的自回归循环搬到代码里，每次只让模型吐 1 个 Token | 二、大模型是怎么 “想” 出回答的？ |
 
 ## 环境要求
 
